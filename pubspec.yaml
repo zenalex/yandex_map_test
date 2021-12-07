@@ -1,0 +1,36 @@
+name: yandex_map_test
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  yandex_mapkit: 
+    path: ../yandex_mapkit
+  cupertino_icons: ^1.0.2
+  permission_handler: ^8.3.0
+  equatable: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  assets:
+    - lib/assets/user.png
+    - lib/assets/cluster.png
+    - lib/assets/place.png
+    - lib/assets/arrow.png
+    - lib/assets/route_start.png
+    - lib/assets/route_stop_by.png
+    - lib/assets/route_end.png
+    - lib/assets/car2red3.png
+  uses-material-design: true
