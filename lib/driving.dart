@@ -27,7 +27,7 @@ class _DrivingExample extends StatefulWidget {
 
 class _DrivingExampleState extends State<_DrivingExample> {
   List<MapObject> mapObjects = <MapObject>[];
-  late Polyline polyline;
+  Polyline? polyline;
   Placemark? carPlacemark;
 
   Placemark get startPlace => Placemark(
@@ -119,9 +119,10 @@ class _DrivingExampleState extends State<_DrivingExample> {
   }
 
   void _setMapBounds() {
+    if (polyline == null) return;
     BoundingBox box = BoundingBox(
-        northEast: _getNordEast(polyline.coordinates),
-        southWest: _getSouthWest(polyline.coordinates));
+        northEast: _getNordEast(polyline!.coordinates),
+        southWest: _getSouthWest(polyline!.coordinates));
     mapController!.setBounds(boundingBox: box, animation: const MapAnimation());
   }
 
@@ -135,7 +136,7 @@ class _DrivingExampleState extends State<_DrivingExample> {
       outlineWidth: 2.0,
       //onTap: (Polyline self, Point point) => print('Tapped me at $point'),
     );
-    mapObjects.add(polyline);
+    mapObjects.add(polyline!);
   }
 
   final delta = 0.002;

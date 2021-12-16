@@ -11,8 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  yandex_mapkit: 
-    path: ../yandex_mapkit
+  yandex_mapkit: ^2.0.0
   cupertino_icons: ^1.0.2
   permission_handler: ^8.3.0
   equatable: ^2.0.3
